@@ -51,7 +51,7 @@ function App() {
       yes,
     };
 
-    console.log(`${firstName} ${lastName} ${age} ${email} ${yes} submitted`);
+    console.log(fullForm);
   }
 
   return (
