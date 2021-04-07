@@ -8,7 +8,7 @@ function App() {
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
-  const [yes, setYes] = useState(true);
+  const [yes, setYes] = useState(false);
 
   function handleNameChange(event) {
     const { value } = event.target;
@@ -36,13 +36,22 @@ function App() {
 
   function handleYesChange(event) {
     const { value } = event.target;
-    setYes(false);
+    setYes(true);
     console.log(value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    const fullForm = console.log("submitted");
+
+    const fullForm = {
+      firstName,
+      lastName,
+      age,
+      email,
+      yes,
+    };
+
+    console.log(`${firstName} ${lastName} ${age} ${email} ${yes} submitted`);
   }
 
   return (
@@ -90,6 +99,9 @@ function App() {
           </label>
         </div>
       </form>
+      <button className="submit" type="submit" onClick={handleSubmit}>
+        SUBMIT
+      </button>
     </div>
   );
 }
